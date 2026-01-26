@@ -44,7 +44,7 @@ func ConvertAntigravityResponseToGemini(ctx context.Context, _ string, originalR
 			}
 		} else {
 			chunkTemplate := "[]"
-			responseResult := gjson.ParseBytes(chunk)
+			responseResult := gjson.ParseBytes(rawJSON)
 			if responseResult.IsArray() {
 				responseResultItems := responseResult.Array()
 				for i := 0; i < len(responseResultItems); i++ {
